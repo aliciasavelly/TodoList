@@ -20,23 +20,35 @@ const initialState = {
 
 const todosReducer = (state = initialState, action) => {
   Object.freeze(state);
-  // const currentTodosArray = buildTodosArray(state);
   switch(action.type) {
     case RECEIVE_TODOS:
-      // return [...currentTodosArray, ...action.todos];
       return merge({}, state, action.todos);
-      // let stateLength = Object.keys(state).length;
-      // let actionLength = Object.keys(action.todos).length;
-      // for (let i = stateLength; i < stateLength + actionLength; i++) {
-      //   newState[i] = action.todos[i];
-      // }
-      // return Object.assign(state, newState);
     case RECEIVE_TODO:
-      // return [...currentTodosArray, action.todo];
       return merge({}, state, action.todo);
     default:
       return state;
   }
 };
+
+// const todosReducer = (state = initialState, action) => {
+//   Object.freeze(state);
+//   // const currentTodosArray = buildTodosArray(state);
+//   switch(action.type) {
+//     case RECEIVE_TODOS:
+//       // return [...currentTodosArray, ...action.todos];
+//       return merge({}, state, action.todos);
+//       // let stateLength = Object.keys(state).length;
+//       // let actionLength = Object.keys(action.todos).length;
+//       // for (let i = stateLength; i < stateLength + actionLength; i++) {
+//       //   newState[i] = action.todos[i];
+//       // }
+//       // return Object.assign(state, newState);
+//     case RECEIVE_TODO:
+//       // return [...currentTodosArray, action.todo];
+//       return merge({}, state, action.todo);
+//     default:
+//       return state;
+//   }
+// };
 
 export default todosReducer;
