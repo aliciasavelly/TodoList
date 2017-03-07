@@ -10,4 +10,5 @@ const mapDispatchToProps = dispatch => ({
   receiveTodo: (todo) => dispatch(receiveTodo(todo))
 });
 
+// debugger;
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
