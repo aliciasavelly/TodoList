@@ -20,11 +20,15 @@ const initialState = {
 
 const todosReducer = (state = initialState, action) => {
   Object.freeze(state);
+  const newState = merge({}, state);
   switch(action.type) {
     case RECEIVE_TODOS:
-      return merge({}, state, action.todos);
+      
+      // return merge({}, state, action.todos);
     case RECEIVE_TODO:
-      return merge({}, state, action.todo);
+      newState[action.todo.id] = action.todo;
+      return newState;
+      // return merge({}, state, action.todo);
     default:
       return state;
   }

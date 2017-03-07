@@ -7,6 +7,7 @@ export const receiveTodos = todos => ({
 });
 
 export const receiveTodo = todo => ({
+  junk: console.log(todo),
   type: RECEIVE_TODO,
   todo
 });
